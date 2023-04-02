@@ -70,7 +70,7 @@
         }                                                    \
         T x = T##_stack_get(vec, vec->top);                  \
         vec->top--;                                          \
-        vec->size--;                                         \
+        vec->size--;                                         \ //fixed garbage value same as stack size issue by decrement size in line 73
         return x;                                            \
     }
 
