@@ -40,11 +40,12 @@
         if (vec->size == vec->capacity)                              \
         {                                                            \
             vec->capacity *= 2;                                      \
-            vec->size++;                                             \
+                                                        
             vec->buf = realloc(vec->buf, sizeof(T) * vec->capacity); \
-        }                                                            \
-        T##_stack_set(vec, vec->size++, data);                       \
+        }
         vec->top++;                                                  \
+        T##_stack_set(vec, vec->size++, data);                       \
+        vec->size++;                                                 \
     }
 
 #define stack_top(T)                   \
